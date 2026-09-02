@@ -247,6 +247,24 @@ footer{
 
 }
 /* ================GALERI================= */
+.lightbox .lb-close {
+    position: fixed !important;
+    top: 18px;
+    right: 22px;
+    z-index: 10000;
+    width: 46px !important;
+    height: 46px !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    background: #B8904F url("https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/images/close.png") center / 18px no-repeat !important;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
+
+.lightbox .lb-close:hover {
+    background-color: #9c7537 !important;
+}
+
 .gallery-item{
     overflow:hidden;
     border-radius:20px;
@@ -524,7 +542,7 @@ textarea.form-control{
 
                     <li class="nav-item ms-3">
 
-                        <a href="https://wa.me/628xxxxxxxxxx"
+                        <a href="https://wa.me/62882005085948"
 
                         target="_blank"
 
@@ -605,7 +623,7 @@ textarea.form-control{
 
                     <i class="fab fa-whatsapp text-warning"></i>
 
-                    08xxxxxxxxxx
+                    0882005085948
 
                 </p>
 
@@ -630,7 +648,7 @@ textarea.form-control{
 
     </a>
 
-    <a href="https://wa.me/628xxxxxxxxxx">
+    <a href="https://wa.me/62882005085948">
 
         <i class="fab fa-whatsapp fa-lg"></i>
 
@@ -712,16 +730,19 @@ textarea.form-control{
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- lightbox -->
+    <!-- Lightbox2 membutuhkan jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
 <script>
 lightbox.option({
-    resizeDuration:200,
-    wrapAround:true,
-    fadeDuration:250,
-    imageFadeDuration:250,
-    albumLabel:"Foto %1 dari %2"
+    resizeDuration: 200,
+    wrapAround: true,
+    fadeDuration: 250,
+    imageFadeDuration: 250,
+    albumLabel: "Foto %1 dari %2",
+    alwaysShowNavOnTouchDevices: true,
+    disableScrolling: true
 });
 </script>
 

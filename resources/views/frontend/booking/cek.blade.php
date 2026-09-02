@@ -223,11 +223,26 @@ Diterima
 
 </span>
 
-@else
+@elseif($booking->status=='Ditolak')
 
 <span class="badge rounded-pill px-4 py-2 bg-danger">
 
 Ditolak
+
+</span>
+
+<p class="text-muted mt-3 mb-0">
+
+Pembayaran DP Anda ditolak. Admin akan segera menghubungi Anda,
+atau Anda dapat menanyakan kepada admin melalui nomor WhatsApp yang tertera.
+
+</p>
+
+@else
+
+<span class="badge rounded-pill px-4 py-2 bg-danger">
+
+{{ $booking->status }}
 
 </span>
 

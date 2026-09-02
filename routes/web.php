@@ -68,9 +68,7 @@ Route::get('/rekomendasi', [FrontendController::class, 'rekomendasi'])
 Route::post('/rekomendasi', [FrontendController::class, 'prosesRekomendasi'])
     ->name('frontend.rekomendasi.proses');
 
-//     Route::get('/galeri', function () {
-//     return 'HALAMAN GALERI BERHASIL';
-// });
+
 
 
 
@@ -181,3 +179,24 @@ Route::get('/adminlte-test', function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+// ==============================
+// use Illuminate\Support\Facades\Http;
+
+// Route::get('/test-fonnte', function () {
+
+//     $response = Http::withHeaders([
+//         'Authorization' => env('FONNTE_TOKEN'),
+//     ])->post('https://api.fonnte.com/send', [
+//         'target' => env('FONNTE_ADMIN'),
+//         'message' => '✅ TEST FONNTE
+
+// Koneksi Fonnte dari website Omah Dekorasi Klaten berhasil.',
+//     ]);
+
+//     return response()->json([
+//         'status' => $response->status(),
+//         'response' => $response->json(),
+//     ]);
+// });

@@ -38,7 +38,7 @@
             <a href="{{ route('frontend.rekomendasi') }}"
                class="btn btn-gold">
 
-                <i class="fas fa-magic me-1"></i>
+                <i class=" me-1"></i>
 
                 Cari Rekomendasi
 
@@ -50,7 +50,7 @@
             <a href="{{ route('frontend.paket') }}"
                class="btn btn-outline-light">
 
-                <i class="fas fa-box-open me-1"></i>
+                <i class="fas  me-1"></i>
 
                 Lihat Paket
 
@@ -267,7 +267,7 @@
                         <a href="{{ route('frontend.rekomendasi') }}"
                            class="btn btn-gold px-4 py-3">
 
-                            <i class="fas fa-magic me-2"></i>
+                            <i class="fas  me-2"></i>
 
                             Cari Rekomendasi Paket
 
@@ -284,7 +284,7 @@
 
                     <div class="text-center p-4">
 
-                        <i class="fas fa-magic"
+                        <i class="fas "
                            style="
                                font-size:90px;
                                color:#B8904F;
@@ -730,7 +730,7 @@
         <a href="{{ route('frontend.paket') }}"
            class="btn btn-light btn-lg me-3">
 
-            <i class="fas fa-gift"></i>
+            <i class="fas "></i>
 
             Lihat Paket
 

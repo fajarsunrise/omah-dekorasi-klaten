@@ -41,7 +41,7 @@ background-position:center;">
 
                         <div class="mb-3">
 
-                            <i class="fas fa-magic fa-3x"
+                            <i class="fas  fa-3x"
                                style="color:#C8A96A;"></i>
 
                         </div>

@@ -7,6 +7,7 @@ use App\Models\Paket;
 use App\Models\Addon;
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use App\Services\FonnteService;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Galeri;
@@ -50,8 +51,7 @@ public function showPaket($id)
 
     return view('frontend.paket.show', compact('paket', 'addons'));
 }
-
-public function storeBooking(Request $request)
+public function storeBooking(Request $request, FonnteService $fonnte)
 {
     $request->validate([
         'paket_id' => 'required',
@@ -135,6 +135,27 @@ public function storeBooking(Request $request)
     if (!empty($pivotData)) {
         $booking->addons()->sync($pivotData);
     }
+
+    // --------------------------------------------------------------------------
+// KIRIM NOTIFIKASI WHATSAPP KE ADMIN
+// --------------------------------------------------------------------------
+
+$booking->load('paket');
+
+$pesan = "🔔 BOOKING BARU\n\n"
+    . "Kode Booking: {$booking->kode_booking}\n"
+    . "Nama Pemesan: {$booking->nama_pemesan}\n"
+    . "Nama Pengantin: {$booking->nama_pengantin}\n"
+    . "No. WhatsApp: {$booking->no_wa}\n"
+    . "Paket: " . ($booking->paket->nama_paket ?? '-') . "\n"
+    . "Tanggal Acara: {$booking->tanggal_acara}\n"
+    . "Lokasi Acara: {$booking->lokasi_acara}\n"
+    . "Total Harga: Rp " . number_format($booking->total_harga, 0, ',', '.') . "\n"
+    . "DP: Rp " . number_format($booking->nominal_dp, 0, ',', '.') . "\n\n"
+    . "Status: Menunggu Verifikasi\n\n"
+    . "Silakan cek dashboard admin untuk melakukan verifikasi.";
+
+$fonnte->sendMessage($pesan);
 
     return redirect()->route('frontend.pembayaran', $booking);
 }
